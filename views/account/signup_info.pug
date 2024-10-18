@@ -24,7 +24,7 @@ block content
           input.form-control(type='text', name='location', id='location', value=user.profile.location)
       .field
         label(for='bio') This is the space to let people know who you are. Describe yourself and share as many details as you would like to tell others about you. There is no limit to the length, but please provide at least 7 details about who you are. Your profile will be visible to other users.  
-        textarea(rows='4', name='bio', id='bio')=user.profile.bio
+        textarea(rows='4', name='bio', id='bio', minlength="1", required, oninvalid="this.setCustomValidity('Please provide at least 7 details about who you are. Do not leave your bio empty!')", oninput="this.setCustomValidity('')")=user.profile.bio
       .ui.buttons
         button.ui.large.positive.button(type='submit') Save
   

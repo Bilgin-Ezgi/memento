@@ -17,7 +17,7 @@ block content
         input.form-control(type='text', name='location', id='location', value=user.profile.location)
       .field
         label(for='bio') This is your space to let people know who you are. Introduce yourself and share as many details as you would like to tell others about you.
-        textarea(rows='2', name='bio', id='bio')=user.profile.bio
+        textarea(rows='2', name='bio', id='bio', minlength="1", required, oninvalid="this.setCustomValidity('Please provide at least 7 details about who you are. Do not leave your bio empty!')", oninput="this.setCustomValidity('')")=user.profile.bio
       .field.image-upload
         p(style="font-weight: bold; font-size: medium; margin-bottom: 0.2em") Profile Picture 
           span(style="font-weight: normal") (Click to Change)
